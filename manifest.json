@@ -1,6 +1,6 @@
 {
-    "name": "aeolian Extensions",  //插件名称
-    "description" : "Hello world Extension",   //鼠标悬浮时提示
+    "name": "autumn",  //插件名称
+    "description" : "autumn专属ChromeExtension",   //鼠标悬浮时提示
     "version": "1.0",  // version在打包完插件的时候，根据version判断插件是否需要更新。
     "manifest_version": 2,   // 写死的
     "icons":{
@@ -13,19 +13,19 @@
       "default_icon": "./icon.png",  //工具栏显示的小图标
       "default_popup": "./popup.html"  //点击工具栏图标弹出的界面样式
     },
-    // 覆盖浏览器默认页面
+    /* 覆盖浏览器默认页面
     "chrome_url_overrides":
     {
         // 覆盖浏览器默认的新标签页
         "newtab": "newtab.html"
-    },
+    },*/
     
     // 会一直常驻的后台JS或后台页面
     "background":
     {
         // 2种指定方式，如果指定JS，那么会自动生成一个背景页
-        //"page": "background.html"
-        "scripts": ["./background.js"]
+        "page": "./background.html"
+        //"scripts": ["./background.js"]
     },
     "commands": {    //设置快捷键
       "_execute_browser_action": {
@@ -67,7 +67,7 @@
     // 普通页面能够直接访问的插件资源列表，如果不设置是无法直接访问的
     "web_accessible_resources": ["js/inject.js"],
     // 插件主页，这个很重要，不要浪费了这个免费广告位
-    "homepage_url": "https://www.baidu.com",
+    "homepage_url": "https://www.cnblogs.com/aeolian/",
     // 向地址栏注册一个关键字以提供搜索建议，只能设置一个关键字
     "omnibox": { "keyword" : "go" }
     // 默认语言
