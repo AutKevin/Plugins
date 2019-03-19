@@ -12,19 +12,20 @@ document.getElementById('check_jquery').addEventListener('click', function()
 	});
 });
 
-// 打开某个资源
+//打开某个资源
 document.getElementById('open_resource').addEventListener('click', function()
 {
 	chrome.devtools.inspectedWindow.eval("window.location.href", function(result, isException)
 	{
-		chrome.devtools.panels.openResource(result, 20, function()
-		{
+		//alert(result);  //result为页面url
+		//跳到指定行
+		chrome.devtools.panels.openResource(result, 20, function(){
 			console.log('资源打开成功！');
 		});
 	});
 });
 
-// 审查元素
+//审查元素直接跳到指定行
 document.getElementById('test_inspect').addEventListener('click', function()
 {
 	chrome.devtools.inspectedWindow.eval("inspect(document.images[0])", function(result, isException){});
