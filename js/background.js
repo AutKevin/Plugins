@@ -27,6 +27,14 @@ chrome.contextMenus.create({
 });
 
 chrome.contextMenus.create({
+	title: '使用Google搜索：%s',
+	contexts: ["all"],
+	onclick: function(params) {
+      chrome.tabs.create({url: 'https://www.google.com/search?q=' + encodeURI(params.selectionText)});
+	}
+});
+
+chrome.contextMenus.create({
 	title:  '使用博客园搜索：%s',
 	contexts: ["all"],
 	onclick: function(params) {
